@@ -1,19 +1,17 @@
 <script src="https://unpkg.com/vue"></script>
 <script type="text/javascript" src="js/interact.min.js"></script>
 <link rel="stylesheet" href="css/style.css">
-<div id="customKeycap">
-	<div id="keyViewer">
-		<select id="chooseView" v-on:change="changeView">
-			<option v-for='option in viewOptions' :value="option.value">
-				{{ option.name }}
-			</option>
-		</select>		
-		<color-picker :set-color='setColor' :colors='colors'></color-picker>
-		<viewer :img='surfaces[currentView].img.value' :text='surfaces[currentView].text.value' :current-view='currentView' :transform-text='transformText' :transform-img='transformImg' :foreground-fill='selectedColor' :background-fill='shadeBlend(-0.2,selectedColor)'></viewer>
-		<upload-btn :on-change='previewImg' :filename='surfaces[currentView].img.filename'></upload-btn>
-		<div id="customText">
-			<input type="text" oninput="keyViewer.updateText(this.value)" placeholder="Choose text..." />
-		</div>		
-	</div>
+<div id="keyViewer">
+	<select id="chooseView" v-on:change="changeView">
+		<option v-for='option in viewOptions' :value="option.value">
+			{{ option.name }}
+		</option>
+	</select>		
+	<viewer :img='surfaces[currentView].img.value' :text='surfaces[currentView].text.value' :current-view='currentView' :transform-text='transformText' :transform-img='transformImg' :foreground-fill='selectedColor.color' :background-fill='shadeBlend(-0.2,selectedColor.color)'></viewer>
+	<upload-btn :on-change='previewImg' :filename='surfaces[currentView].img.filename'></upload-btn>
+	<div id="customText">
+		<input type="text" oninput="keyViewer.updateText(this.value)" placeholder="Choose text..." />
+	</div>	
+	<color-picker :set-color='setColor' :colors='colors'></color-picker>	
 </div>
 <script type="text/javascript" src="js/keyViewer.js"></script>

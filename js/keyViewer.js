@@ -1,9 +1,9 @@
 Vue.component('color-picker',{
-	props:['colors', 'setColor'],
+	props:['colors', 'setColor', 'selectedStyle','defaultStyle'],
 	template:`
 		<div id="colorPicker">
 			<div v-for='color in colors'>
-				<div class="colorChoice" :id="color.name" v-bind:style="{'background-color':color.color}" v-on:click="setColor(color.color)"></div>
+				<div class="colorChoice" :id="color.name" v-bind:style="{'background-color':color.color}" v-on:click="setColor(color)"></div>
 			</div>
 		</div>
 	`
@@ -24,7 +24,7 @@ Vue.component('viewer', {
 			<div class="moveableText" :style="transformText"> {{ text }} </div>
 			<img :src="img" class="moveableImg" :style="transformImg"/>				
 			<template v-if="currentView === 'topView'">
-				<svg width="215" height="220">
+				<svg width="200" height="210">
 					<rect stroke="#000" rx="20" id="bottom" height="197.5" width="181.99999" y="7.25" x="9.25" stroke-opacity="null" stroke-width="1.5" :fill="backgroundFill"/>
 					<rect id="top" rx="20" height="150" width="150" y="15.5" x="19" stroke-width="1.5" stroke="#000" :fill="foregroundFill" class="restrictRect"/>
 				</svg>						
@@ -37,24 +37,48 @@ Vue.component('viewer', {
 			</template>	
 		</div>	
 	`	
-})	
+})
 var keyViewer = new Vue({
 	el:'#keyViewer',
 	data: {
 		currentView:'topView',
-		selectedColor: '#fff',
+		selectedColor: {name:'white',color:'#ffffff'},
 		colors: [
+			{name:'black', color:'#1a1a1a'},
+			{name:'white',color:'#ffffff'},
+			{name:'gray', color:'#d0ccc0'},
+			{name:'dark-gray', color:'#96938e'},
+			{name:'graphite', color:'#60605b'},
+			{name:'charcoal', color:'#373534'},
+			{name:'pink', color:'#fbbbc9'},
 			{name:'red', color:'#c13828'},
+			{name:'maroon', color:'#5f3032'},
+			{name:'blue', color:'#5eb1e7'},
+			{name:'royal-blue', color:'#0046ad'},	
+			{name:'navy', color:'#002e5f'},
+			{name:'mint', color:'#8ed7b0'},	
 			{name:'green', color:'#1db63a'},
-			{name:'blue', color:'#0046ad'}				
+			{name:'olive', color:'#53682b'},	
+			{name:'yellow', color:'#f8d615'},	
+			{name:'orange', color:'#f67f00'},	
+			{name:'graybrown', color:'#766e54'},	
+			{name:'brown', color:'#6f4c23'},	
+			{name:'purple', color:'#ac97d8'},	
+			{name:'aubergine', color:'#43165e'}					
 		],
 		viewOptions: [
 			{name:'Top',value:'topView'},
-			{name:'Front',value:'frontView'}				
+			{name:'Front',value:'frontView'},
+			{name:'Left side',value:'leftView'},
+			{name:'Right side',value:'rightView'},
+			{name:'Back',value:'backView'}				
 		],
 		surfaces: {
 			topView:{img:{x:'20',y:'16',value:'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=', filename:''},text:{x:'25',y:'15',value:'top'}},
-			frontView:{img:{x:'50',y:'120',value:'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=', filename:''},text:{x:'50',y:'120',value:'front'}}					
+			frontView:{img:{x:'50',y:'120',value:'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=', filename:''},text:{x:'50',y:'120',value:'front'}},
+			leftView:{img:{x:'50',y:'120',value:'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=', filename:''},text:{x:'50',y:'120',value:'left'}},
+			rightView:{img:{x:'50',y:'120',value:'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=', filename:''},text:{x:'50',y:'120',value:'right'}},
+			backView:{img:{x:'50',y:'120',value:'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=', filename:''},text:{x:'50',y:'120',value:'back'}}					
 		}
 	},
 	computed: {
@@ -88,7 +112,9 @@ var keyViewer = new Vue({
 	},
 	methods: {
 		setColor: function(color) {
-			keyViewer.selectedColor = color
+			document.querySelector('#'+this.selectedColor.name).style.border = '1px solid #d4d4d4'
+			document.querySelector('#'+color.name).style.border = '2px solid red'
+			this.selectedColor = color
 		},			
 		changeView: function(ev) {
 			this.currentView = ev.target.selectedOptions[0].value
