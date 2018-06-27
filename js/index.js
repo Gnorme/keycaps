@@ -1,65 +1,3 @@
-var snapTargets = [{}]
-interact('.resize-drag')
-	.draggable({
-		onmove: window.dragMoveListener,
-		snap: {
-			targets: snapTargets,
-			range:30,
-		    relativePoints: [
-		      //{ x: 0  , y: 0   }  // snap relative to the element's top-left,
-		      { x: 0.5, y: 0.5 }   // to the center
-		      // { x: 1  , y: 1   }    // and to the bottom-right
-		    ]			
-		},
-		restrict: {
-			restriction: {
-				x:20,
-				y:20,
-				width:150,
-				height:150
-			},
-			elementRect: { top: 0, left: 0, bottom: 1, right: 1 }
-		},
-	})
-	.resizable({
-		// resize from all edges and corners
-		edges: {right: true, bottom: true, left: true, top:true},
-
-		// keep the edges inside the parent
-		restrictEdges: {
-			outer:{
-					x:20,
-					y:20,
-					width:150,
-					height:150
-				},
-		},
-
-		// minimum size
-		restrictSize: {
-		min: { width: 50, height: 50 },
-		},
-
-		inertia: true,
-	})
-	.on('resizemove', function (event) {
-		var target = event.target
-		var newWidth = event.rect.width
-		target.style.width = newWidth + 'px'
-		snapTargets = [
-			{x:32+(newWidth / 2), y:28 + (newWidth / 2)},
-			{x:70 + 32,y:28 + (newWidth / 2)},
-			{x:178 - (newWidth / 2),y:28 + (newWidth / 2)},
-			{x:32+(newWidth / 2), y:98},
-			{x:70 + 32,y:98},
-			{x:178 - (newWidth / 2),y:98},
-			{x:32+(newWidth / 2), y:150 + 28 - (newWidth / 2) },
-			{x:70 + 32,y:150 + 28 -(newWidth / 2)},
-			{x:178 - (newWidth / 2),y:150 + 28 - (newWidth / 2)},			
-		]
-		interact('.resize-drag').options.drag.snap.targets = snapTargets		
-		//placeImage()
-	});	
 function dragMoveListener (event) {
 	var target = event.target,
 		// keep the dragged position in the data-x/data-y attributes
@@ -90,12 +28,13 @@ function shadeBlend(p,c0,c1) {
 function changeColor(el) {
 	var top = document.getElementById("top")
 	var bottom = document.getElementById("bottom")
-	var front = document.getElementById("front")
+	var sides = document.getElementsByClassName('keySurface')
 	var color = el.style.backgroundColor
-	console.log(color)
 	top.style.fill = color
-	front.style.fill = color
 	bottom.style.fill = shadeBlend(-0.2,color)
+	for (i = 0; i < sides.length; i++) {
+		sides[i].style.fill = color
+	}
 }
 
 

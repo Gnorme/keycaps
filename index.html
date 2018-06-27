@@ -22,135 +22,276 @@
 			</div> -->
 		</div>
 		<div>
-			<select style="display:inline-block;">
-				<option>Top</option>
-				<option>Front</option>
-				<option>Left Side</option>
-				<option>Right Side</option>
-				<option>Back</option>
+			<select id="selectView" style="display:inline-block;" onchange="setView()">
+				<option value='topView'>Top</option>
+				<option value='frontView'>Front</option>
+				<option value='leftView'>Left Side</option>
+				<option value='rightView'>Right Side</option>
+				<option value='backView'>Back</option>
 			</select>
 		</div>
 		<div id="keycap-container">
-			<div class="resize-container">
-				<img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" class="resize-drag"/>
+			<div class="surface" id="frontView">
+				<div class="moveableText" id="frontText"></div>
+				<img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" id="frontImg" class="moveableImg"/>				
+				<svg width="215" height="220">
+	      			<path stroke-width="1.5" stroke="#000" fill="#fff" d="M52.946,119.000 L148.054,119.000 C155.667,119.000 161.838,125.147 161.838,132.729 L177.000,186.271 C177.000,193.853 170.829,200.000 163.216,200.000 L37.784,200.000 C30.171,200.000 24.000,193.853 24.000,186.271 L39.162,132.729 C39.162,125.147 45.333,119.000 52.946,119.000 Z" class="keySurface"/>
+	      			<rect class="sideRect" stroke-opacity="0" fill-opacity="0" x="45" y="120" width="110" height="80" />
+	      		</svg>		
+			</div>			
+			<div class="surface" id="topView">
+				<div class="moveableText" id="topText"></div>
+				<img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" id="topImg" class="moveableImg"/>	
 				<svg width="215" height="220">
 					<rect stroke="#000" rx="20" id="bottom" height="197.5" width="181.99999" y="7.25" x="9.25" stroke-opacity="null" stroke-width="1.5" fill="#f4f4f4"/>
 					<rect id="top" rx="20" height="150" width="150" y="15.5" x="19" stroke-width="1.5" stroke="#000" fill="#fff" onclick="console.log('test');"/>
 				</svg>				
 			</div>
-			<div id="front-view">
-				<div id="content"></div>
+			<div class="surface" id="leftView">
 				<svg width="215" height="220">
-	      			<path stroke-width="1.5" stroke="#000" fill="#fff" d="M52.946,119.000 L148.054,119.000 C155.667,119.000 161.838,125.147 161.838,132.729 L177.000,186.271 C177.000,193.853 170.829,200.000 163.216,200.000 L37.784,200.000 C30.171,200.000 24.000,193.853 24.000,186.271 L39.162,132.729 C39.162,125.147 45.333,119.000 52.946,119.000 Z" class="cls-1" id="front"/>
+	      			<path stroke-width="1.5" stroke="#000" fill="#fff" d="M52.946,119.000 L148.054,119.000 C155.667,119.000 161.838,125.147 161.838,132.729 L177.000,186.271 C177.000,193.853 170.829,200.000 163.216,200.000 L37.784,200.000 C30.171,200.000 24.000,193.853 24.000,186.271 L39.162,132.729 C39.162,125.147 45.333,119.000 52.946,119.000 Z" class="keySurface"/>
+	      			<rect class="sideRect" stroke-opacity="0" fill-opacity="0" x="45" y="120" width="110" height="80" />
 	      		</svg>		
 			</div>
+			<div class="surface" id="rightView">
+				<svg width="215" height="220">
+	      			<path stroke-width="1.5" stroke="#000" fill="#fff" d="M52.946,119.000 L148.054,119.000 C155.667,119.000 161.838,125.147 161.838,132.729 L177.000,186.271 C177.000,193.853 170.829,200.000 163.216,200.000 L37.784,200.000 C30.171,200.000 24.000,193.853 24.000,186.271 L39.162,132.729 C39.162,125.147 45.333,119.000 52.946,119.000 Z" class="keySurface"/>
+	      			<rect class="sideRect" stroke-opacity="0" fill-opacity="0" x="45" y="120" width="110" height="80" />
+	      		</svg>		
+			</div>
+			<div class="surface" id="backView">
+				<svg width="215" height="220">
+	      			<path stroke-width="1.5" stroke="#000" fill="#fff" d="M52.946,119.000 L148.054,119.000 C155.667,119.000 161.838,125.147 161.838,132.729 L177.000,186.271 C177.000,193.853 170.829,200.000 163.216,200.000 L37.784,200.000 C30.171,200.000 24.000,193.853 24.000,186.271 L39.162,132.729 C39.162,125.147 45.333,119.000 52.946,119.000 Z" class="keySurface"/>
+	      			<rect class="sideRect" stroke-opacity="0" fill-opacity="0" x="45" y="120" width="110" height="80" />
+	      		</svg>		
+			</div>											
 		</div>
 		<div id="fileSelect">
-			<input type="file" name="topImg" id="topImg" class="inputfile" onchange="previewFile()" />
-			<label for="topImg"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> <span>Choose image&hellip;</span></label>
+			<input type="file" name="imgUpload" id="imgUpload" class="inputfile" onchange="previewFile()" />
+			<label for="imgUpload"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> <span>Choose image&hellip;</span></label>
 		</div>
 		<input type="text" id="customText" oninput="updateText()" placeholder="Choose text..." />
+		<select id="fontFamily" onchange="setFontFamily()">
+			<option>Arial</option>
+			<option>Helvetica</option>
+			<option>Roboto</option>
+		</select>
+		<select id="fontSize" onchange="setFontSize()">
+			<option>Font size</option>
+			<option>18</option>
+			<option>20</option>
+			<option>22</option>
+			<option>24</option>
+			<option>26</option>
+			<option>28</option>
+			<option>30</option>
+			<option>32</option>
+			<option>34</option>
+			<option>36</option>
+		</select>
 
 	</body>
 	<!-- <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script> -->	
 	<script>
+		var sideSurface = document.querySelector('.sideRect').getBoundingClientRect()
+		document.querySelector('#frontView').style.display = 'none'
+		var topSurface = document.querySelector('#top').getBoundingClientRect()
+		document.querySelector('#frontView').style.display = 'none'
+		document.querySelector('#leftView').style.display = 'none'
+		document.querySelector('#rightView').style.display = 'none'
+		document.querySelector('#backView').style.display = 'none'
+		var currentView = 'topView'
+		InitInteractive()
+		function setView(){
+			var elements = document.getElementsByClassName('surface');
+			var elToShow = document.querySelector('#selectView').value
+			console.log(elToShow)
+			var el;
+			for (var i = 0; i < elements.length; i++) {
+				elements[i].style.display = 'none'
+				if (elements[i].id == elToShow){
+					el = elements[i]
+				}
+			}
+			el.style.display = 'inline-block';
+			currentView = elToShow
+		}
+		function setFontSize(){
+			var option = document.querySelector('#fontSize').value
+			var content = document.querySelector('#content')
+			content.style.fontSize = option
+		}
+		function setFontFamily(){
+			var option = document.querySelector('#fontFamily').value
+			var content = document.querySelector('#content')
+			content.style.fontFamily = option		
+		}
+		
+
+		function InitInteractive() {
+			var moveableTexts = document.getElementsByClassName('moveableText')
+			var moveableImgs = document.getElementsByClassName('moveableImg')
+			for (j = 0; j < moveableImgs.length; j++){
+				var parentId = moveableTexts[j].parentElement.id
+				//console.log(parentId)
+				if (parentId == 'topView') {
+					var surface = topSurface
+				} else {
+					var surface = sideSurface
+				}
+				var elementId = moveableImgs[j].id
+				interact('#' + elementId)
+					.draggable({
+						onmove: window.dragMoveListener,
+						snap: {
+							targets: [{}],
+							range:30,
+						    relativePoints: [
+						      //{ x: 0  , y: 0   }  // snap relative to the element's top-left,
+						      { x: 0.5, y: 0.5 }   // to the center
+						      // { x: 1  , y: 1   }    // and to the bottom-right
+						    ]			
+						},
+						restrict: {
+							restriction: {
+								x:surface.left,
+								y:surface.top,
+								width:surface.width,
+								height:surface.height
+							},
+							elementRect: { top: 0, left: 0, bottom: 1, right: 1 }
+						},
+					})
+					.resizable({
+						// resize from all edges and corners
+						edges: {right: true, bottom: true, left: true, top:true},
+
+						// keep the edges inside the parent
+						restrictEdges: {
+							outer:{
+									x:surface.x,
+									y:surface.y,
+									width:surface.width,
+									height:surface.height
+								},
+						},
+
+						// minimum size
+						restrictSize: {
+						min: { width: 50, height: 50 },
+						},
+
+						inertia: true,
+					})
+					.on('resizemove', function (event) {
+						var target = event.target
+						var newWidth = event.rect.width
+						var newHeight = event.rect.height
+						target.style.width = newWidth + 'px'
+						var left = surface.left+(newWidth / 2)
+						var center = surface.left + (surface.width / 2)
+						var right = surface.left + surface.width - (newWidth / 2)
+						var top = surface.top + (newHeight / 2)
+						var middle = surface.top + (surface.height / 2)
+						var bottom = surface.top + surface.height - (newHeight / 2)
+						var snapTargets = [
+							{x:left, y:top},
+							{x:center,y:top},
+							{x:right,y:top},
+							{x:left, y:middle},
+							{x:center,y:middle},
+							{x:right,y:middle},
+							{x:left, y:bottom},
+							{x:center,y:bottom},
+							{x:right,y:bottom},			
+						]
+						interact('#'+elementId).options.drag.snap.targets = snapTargets		
+						//placeImage()
+					});
+			}
+			for (i = 0; i < moveableTexts.length; i++){
+				//console.log(moveableTexts[i].id)
+				var parentId = moveableTexts[i].parentElement.id
+				//console.log(parentId)
+				if (parentId == 'topView') {
+					var surface = topSurface
+				} else {
+					var surface = sideSurface
+				}
+				interact('#'+moveableTexts[i].id)
+					.draggable({
+						onmove: window.dragMoveListener,
+						snap: {
+							targets: [{}],
+							range:15,
+						    relativePoints: [
+						      //{ x: 0  , y: 0   }  // snap relative to the element's top-left,
+						      { x: 0.5, y: 0.5 }   // to the center
+						      // { x: 1  , y: 1   }    // and to the bottom-right
+						    ]			
+						},
+						restrict: {
+							restriction: {
+								x:surface.left,
+								y:surface.top,
+								width:surface.width,
+								height:surface.height
+							},
+							elementRect: { top: 0, left: 0, bottom: 1, right: 1 }
+						},
+					})				
+			}					
+		}
+	
 		function previewFile(){
-			var preview = document.querySelector('.resize-drag'); //selects the query named img
+			var surfaceImg = document.querySelector('div#'+currentView+' img')
+			//var preview = document.querySelector('.resize-drag'); //selects the query named img
 			var file    = document.querySelector('input[type=file]').files[0]; //sames as here
 			var label = document.querySelector( '.inputfile' ).nextElementSibling
 			var reader  = new FileReader();
 
 			reader.onloadend = function () {
-				preview.src = reader.result;
+				surfaceImg.src = reader.result;
 			}
-
+			
 			if (file) {
 				console.log(file)
 				label.querySelector( 'span' ).innerHTML = file.name
 				reader.readAsDataURL(file); //reads the data as a URL
+				surfaceImg.style.left = sideSurface.left
+				surfaceImg.style.top = sideSurface.top
 			} else {
-				preview.src = "";
+				surfaceImg.src = "";
 			}
-			placeImage()
+			//placeImage()
 		}
 		function updateText(){
 			var textInput = document.querySelector('#customText').value
-			document.querySelector('#content').innerHTML = textInput
-			placeText()
-		}
-		function placeImage(){
-			var col = document.querySelector('[name="col"]:checked').value;
-			var row = document.querySelector('[name="row"]:checked').value;
-			var img = document.querySelector('.resize-drag')
-			var rect = document.querySelector('#top')
-
-
-			switch (col) {
-				case 'left':
-					img.style.marginLeft = 20
-					break
-				case 'center':
-					img.style.marginLeft = rect.width.baseVal.value / 2 - img.width / 2 + 19
-					break
-				case 'right':
-					img.style.marginLeft = rect.width.baseVal.value - img.width + 19
-					break
-				default:
-					img.style.marginLeft = rect.width.baseVal.value / 2 - img.width / 2 + 19
-					break
-			}
-			switch (row) {
-				case 'top':
-					img.style.marginTop = 15
-					break
-				case 'middle':
-					img.style.marginTop = rect.height.baseVal.value / 2 - img.height / 2 + 15
-					break
-				case 'bottom':
-					img.style.marginTop = rect.height.baseVal.value - img.height + 15
-					break
-				default:
-					img.style.marginTop = rect.height.baseVal.value / 2 - img.height / 2 + 15
-					break
-			}
-		}
-		function placeText() {
-			var col = document.querySelector('[name="col"]:checked').value;
-			var row = document.querySelector('[name="row"]:checked').value;
-			var text = document.querySelector('#content')
-			var rect = document.querySelector('#front').getBoundingClientRect()
-			var left = 55
-			var top = 125
-			text.style.marginLeft = left
-			console.log(text.offsetHeight)
-			switch (col) {
-				case 'left':
-					text.style.textAlign = 'left'
-					break
-				case 'center':
-					text.style.textAlign = 'center'
-					break
-				case 'right':
-					text.style.textAlign = 'right'
-					break
-				default:
-					text.style.marginLeft = rect.width / 2 - text.offsetWidth/ 2 + left
-					break
-			}
-			switch (row) {
-				case 'top':
-					text.style.marginTop = top
-					break
-				case 'middle':
-					text.style.marginTop = rect.height / 2 - text.offsetHeight / 2 + top
-					break
-				case 'bottom':
-					text.style.marginTop = rect.height - text.offsetHeight + top
-					break
-				default:
-					text.style.marginTop = rect.height / 2 - text.offsetHeight / 2 + top
-					break
-			}			
+			var content = document.querySelector('div#'+currentView+' .moveableText')
+			content.innerHTML = textInput
+			var rect = content.getBoundingClientRect()
+			console.log(rect)
+			var newWidth = rect.width
+			var newHeight = rect.height
+			var left = surface.left+(newWidth / 2)
+			var center = surface.left + (surface.width / 2)
+			var right = surface.left + surface.width - (newWidth / 2)
+			var top = surface.top + (newHeight / 2)
+			var middle = surface.top + (surface.height / 2)
+			var bottom = surface.top + surface.height - (newHeight / 2)
+			var snapTargets = [
+				{x:left, y:top},
+				{x:center,y:top},
+				{x:right,y:top},
+				{x:left, y:middle},
+				{x:center,y:middle},
+				{x:right,y:middle},
+				{x:left, y:bottom},
+				{x:center,y:bottom},
+				{x:right,y:bottom},			
+			]
+			interact('.moveableText').options.drag.snap.targets = snapTargets
+			console.log(interact('.moveableText'))
 		}
 	</script>
 </html>

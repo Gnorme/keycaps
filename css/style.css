@@ -1,11 +1,8 @@
-.resize-drag {
+.moveableImg{
 	color: white;
-	font-size: 20px;
-	font-family: sans-serif;
-	border-radius: 8px;
+	width:120px;
 	position:absolute;
-	float:left;
-	width: 120px;
+
 
 	/* This makes things *much* easier */
 	box-sizing: border-box;
@@ -75,12 +72,15 @@
 	width:215px;
 	height:220px;
 }
-#content{
+.moveableText{
 	position:absolute;
-	width:90px;
-	word-wrap: break-word;
+	width:auto;
+	padding-top:7px;
+	padding-bottom:7px;
+	padding-left:10px;
 	padding-right:10px;
-	padding-bottom:15px;
+	word-wrap: break-word;
+	max-width:130px;
 	display:inline-block;
 }
 #keycap-container{
