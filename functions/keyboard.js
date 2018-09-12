@@ -15,7 +15,7 @@ exports.handler = async (event, context) => {
 			try { 
 				keyboard = JSON.parse(jData);
 				if (req.query.sides) {
-					fs.readFile('./../../sides.json','utf-8', (err, jData) => {
+					fs.readFile('sides.json','utf-8', (err, jData) => {
 						if (err) {
 							return {
 								statusCode:404,
