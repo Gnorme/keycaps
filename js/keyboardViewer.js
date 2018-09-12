@@ -1,7 +1,7 @@
 Vue.component('keyboard', {
 	props: ['keyboard'],
 	template: `
-		<svg style="background-color:black" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" :width="keyboard.width" :height="keyboard.height">
+		<svg style="background-color:black; margin:20px 0;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" :width="keyboard.width" :height="keyboard.height">
 			<image v-bind:xlink:href='keyboard.backplate' :width="keyboard.width" :height="keyboard.height" />
 			<image v-for="section in keyboard.sections" v-bind:xlink:href="section.data" :width="section.width" :height="section.height" :y="section.y" :x="section.x" />
 			<g v-for="key in keyboard.keys">

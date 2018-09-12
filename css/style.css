@@ -247,13 +247,13 @@ a {
 .grid-container {
 	display:grid;
 	grid-template-columns: auto auto;
-	grid-template-rows: 1fr 1fr;
+	grid-template-rows: 1fr;
 	grid-template-areas:
-		"product options"
-		"info info";
+		"product options";
 	max-width: 1140px;
 	margin-left:auto;
 	margin-right:auto;
+	padding: 30px 0;
 }
 .product {
 	grid-area:product;
@@ -274,10 +274,15 @@ a {
 }
 
 .info {
-	grid-area:info;
-	padding-left:50px;
 	font-size:18px;
+	width:50%;
+	margin: 0 auto;
+	padding: 15px 0 15px 50px;
+}
+.product-info {
+	width:100%;
 	background:#f9f9f9;
+	
 }
 /* Custom Select */
 .select {
@@ -305,16 +310,16 @@ a {
 }
 
 .keyboard-container {
+	padding: 75px 0;
 	display:grid;
 	height:auto;
-	grid-template-rows: 1fr 1fr;
+	grid-template-rows: 1fr;
 	grid-template-columns:auto;
 	max-width: 1140px;
 	margin-left:auto;
 	margin-right:auto;	
 	grid-template-areas: 
 		"keyboard"
-		"info";
 }
 #keyboardViewer {
 	grid-area:keyboard;

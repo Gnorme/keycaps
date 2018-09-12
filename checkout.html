@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8"/>
+		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+		<link rel="stylesheet" href="css/style.css">
+		<script src="https://js.stripe.com/v3/"></script>
+	
+	</head>
+	<body  onload="addElements()">
+		<div id="navbar">
+			<div id="navbar-container">
+				<div id="logo">L O G O</div>
+				<div id="link-container">
+					<ul id="navbar-links">
+						<li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+						<li class="nav-item">
+							<a class="nav-link">Products</a>
+							<ul class="dropdown">
+								<li class="dropdown-item"><a href="keycap.html">Single custom keycap</a></li>
+								<li class="dropdown-item"><a href="keyboard.html">Custom keycap set</a></li>
+							</ul>
+						</li>
+						<li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+						<li class="nav-item"><a class="nav-link" href="support.html">Support</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>	
+		<form action="/charge" method="post" id="payment-form">
+		  <div class="form-row">
+		    <label for="card-element">
+		      Credit or debit card
+		    </label>
+		    <div id="card-element">
+		      <!-- A Stripe Element will be inserted here. -->
+		    </div>
+
+		    <!-- Used to display Element errors. -->
+		    <div id="card-errors" role="alert"></div>
+		  </div>
+
+		  <button id="payment-request-button">Submit Payment</button>
+		</form>
+	</body>
+		<script>
+			var stripe = Stripe('pk_test_eLeDzlRBpa1Dao11EMQGl757');
+			var elements = stripe.elements();
+			var paymentRequest = stripe.paymentRequest({
+			  country: 'US',
+			  currency: 'usd',
+			  total: {
+			    label: 'Demo total',
+			    amount: 1000,
+			  },
+			  requestPayerName: true,
+			  requestPayerEmail: true,
+			});	
+			var prButton = elements.create('paymentRequestButton', {
+			  paymentRequest: paymentRequest,
+			});	
+			paymentRequest.canMakePayment().then(function(result) {
+			  if (result) {
+			    prButton.mount('#payment-request-button');
+			  } else {
+			    document.getElementById('payment-request-button').style.display = 'none';
+			  }
+			});							
+			function addElements() {
+				var style = {
+				  base: {
+				    color: '#303238',
+				    fontSize: '16px',
+				    color: "#32325d",
+				    fontSmoothing: 'antialiased',
+				    '::placeholder': {
+				      color: '#ccc',
+				    },
+				  },
+				  invalid: {
+				    color: '#e5424d',
+				    ':focus': {
+				      color: '#303238',
+				    },
+				  },
+				};
+				var cardElement = elements.create('card', {style: style})
+
+				// Add an instance of the card Element into the `card-element` <div>.
+				cardElement.mount('#card-element');		
+			}			
+		</script>		
+</html>
