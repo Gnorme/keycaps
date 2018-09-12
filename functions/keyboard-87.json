@@ -1,0 +1,1927 @@
+{
+    "width":750,
+    "height":265,
+    "backplate":"data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAu4AAAEJAQMAAADxejAuAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABlBMVEUpKSkAAACUL0DwAAAAAWJLR0QB/wIt3gAAAAlwSFlzAAALEgAACxIB0t1+/AAAAC9JREFUeNrtwTEBAAAAwqD1T20ND6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4NGJXAAEoxhPHAAAAAElFTkSuQmCC",
+    "sections":[
+        {"height":205,"width":616,"y":60,"x":0,"data":"data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAmgAAADNAQMAAAA2bx5+AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAA1BMVEUAAACnej3aAAAAAWJLR0QAiAUdSAAAAAlwSFlzAAALEgAACxIB0t1+/AAAACVJREFUaN7twQEBAAAAgiD/r25IQAEAAAAAAAAAAAAAAAAAAPBrPnYAAdla4WUAAAAASUVORK5CYII="},
+        {"height":82,"width":123,"y":60,"x":627,"data":"data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHsAAABSAQMAAABOqjnCAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAA1BMVEUAAACnej3aAAAAAWJLR0QAiAUdSAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABRJREFUOMtjYBgFo2AUjIJRQB8AAAVyAAEHM9WdAAAAAElFTkSuQmCC"},
+        {"height":82,"width":123,"y":183,"x":627,"data":"data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHsAAABSAQMAAABOqjnCAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABlBMVEUAAAAAAAClZ7nPAAAAAXRSTlMAQObYZgAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAkSURBVDjLY2AAgfr/QHCAAQFGBUYFBrnAf1TwYFRgVGAoCAAADxpfGvk2RW0AAAAASUVORK5CYII="},
+        {"height":41,"width":750,"y":1,"x":0,"data":"data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAu4AAAApAQMAAABQoT6sAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABlBMVEUAAAAAAAClZ7nPAAAAAXRSTlMAQObYZgAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAA8SURBVEjH7czJCQAgEATBzcRQTM3AxevrEYBQ/RyYir4qMcv9rEaky9xec9rveDwej8fj8Xg8Ho/Hf8wP9l7wGUWOLJYAAAAASUVORK5CYII="}
+    ],
+    "keys":{
+        "f11": {
+            "face": {
+                "width": "28",
+                "x": "539",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "4"
+            },
+            "name": "f11",
+            "body": {
+                "width": "39",
+                "x": "534",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "2"
+            }
+        },
+        "end": {
+            "face": {
+                "width": "28",
+                "x": "674",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "104"
+            },
+            "name": "end",
+            "body": {
+                "width": "39",
+                "x": "669",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "102"
+            }
+        },
+        "bar-7": {
+            "face": {
+                "width": "28",
+                "x": "293",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "63"
+            },
+            "name": "bar-7",
+            "body": {
+                "width": "39",
+                "x": "288",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "61"
+            }
+        },
+        "right-shift": {
+            "face": {
+                "width": "100",
+                "x": "509",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "186"
+            },
+            "name": "right-shift",
+            "body": {
+                "width": "111",
+                "x": "504",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "184"
+            }
+        },
+        "left-ctrl": {
+            "face": {
+                "width": "38",
+                "x": "7",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "227"
+            },
+            "name": "left-ctrl",
+            "body": {
+                "width": "49",
+                "x": "1",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "225"
+            }
+        },
+        "v-key": {
+            "face": {
+                "width": "28",
+                "x": "222",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "186"
+            },
+            "name": "v-key",
+            "body": {
+                "width": "39",
+                "x": "217",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "184"
+            }
+        },
+        "f3": {
+            "face": {
+                "width": "28",
+                "x": "170",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "4"
+            },
+            "name": "f3",
+            "body": {
+                "width": "39",
+                "x": "165",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "2"
+            }
+        },
+        "left-alt": {
+            "face": {
+                "width": "38",
+                "x": "109",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "227"
+            },
+            "name": "left-alt",
+            "body": {
+                "width": "49",
+                "x": "103",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "225"
+            }
+        },
+        "c-key": {
+            "face": {
+                "width": "28",
+                "x": "181",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "186"
+            },
+            "name": "c-key",
+            "body": {
+                "width": "39",
+                "x": "176",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "184"
+            }
+        },
+        "i-key": {
+            "face": {
+                "width": "28",
+                "x": "355",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "104"
+            },
+            "name": "i-key",
+            "body": {
+                "width": "39",
+                "x": "350",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "102"
+            }
+        },
+        "b-key": {
+            "face": {
+                "width": "28",
+                "x": "263",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "186"
+            },
+            "name": "b-key",
+            "body": {
+                "width": "39",
+                "x": "258",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "184"
+            }
+        },
+        "y-key": {
+            "face": {
+                "width": "28",
+                "x": "273",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "104"
+            },
+            "name": "y-key",
+            "body": {
+                "width": "39",
+                "x": "268",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "102"
+            }
+        },
+        "bar-5": {
+            "face": {
+                "width": "28",
+                "x": "211",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "63"
+            },
+            "name": "bar-5",
+            "body": {
+                "width": "39",
+                "x": "206",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "61"
+            }
+        },
+        "caps": {
+            "face": {
+                "width": "58",
+                "x": "7",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "145"
+            },
+            "name": "caps",
+            "body": {
+                "width": "70",
+                "x": "1",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "143"
+            }
+        },
+        "f12": {
+            "face": {
+                "width": "28",
+                "x": "580",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "4"
+            },
+            "name": "f12",
+            "body": {
+                "width": "39",
+                "x": "575",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "2"
+            }
+        },
+        "o-key": {
+            "face": {
+                "width": "28",
+                "x": "396",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "104"
+            },
+            "name": "o-key",
+            "body": {
+                "width": "39",
+                "x": "391",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "102"
+            }
+        },
+        "print-screen": {
+            "face": {
+                "width": "28",
+                "x": "633",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "4"
+            },
+            "name": "print-screen",
+            "body": {
+                "width": "39",
+                "x": "628",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "2"
+            }
+        },
+        "f2": {
+            "face": {
+                "width": "28",
+                "x": "129",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "4"
+            },
+            "name": "f2",
+            "body": {
+                "width": "39",
+                "x": "124",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "2"
+            }
+        },
+        "f10": {
+            "face": {
+                "width": "28",
+                "x": "498",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "4"
+            },
+            "name": "f10",
+            "body": {
+                "width": "39",
+                "x": "493",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "2"
+            }
+        },
+        "bar-6": {
+            "face": {
+                "width": "28",
+                "x": "252",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "63"
+            },
+            "name": "bar-6",
+            "body": {
+                "width": "39",
+                "x": "247",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "61"
+            }
+        },
+        "z-key": {
+            "face": {
+                "width": "28",
+                "x": "99",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "186"
+            },
+            "name": "z-key",
+            "body": {
+                "width": "39",
+                "x": "94",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "184"
+            }
+        },
+        "semicolon": {
+            "face": {
+                "width": "28",
+                "x": "447",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "145"
+            },
+            "name": "semicolon",
+            "body": {
+                "width": "39",
+                "x": "442",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "143"
+            }
+        },
+        "down": {
+            "face": {
+                "width": "28",
+                "x": "674",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "227"
+            },
+            "name": "down",
+            "body": {
+                "width": "39",
+                "x": "669",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "225"
+            }
+        },
+        "up": {
+            "face": {
+                "width": "28",
+                "x": "674",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "186"
+            },
+            "name": "up",
+            "body": {
+                "width": "39",
+                "x": "669",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "184"
+            }
+        },
+        "f7": {
+            "face": {
+                "width": "28",
+                "x": "355",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "4"
+            },
+            "name": "f7",
+            "body": {
+                "width": "39",
+                "x": "350",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "2"
+            }
+        },
+        "bar-4": {
+            "face": {
+                "width": "28",
+                "x": "170",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "63"
+            },
+            "name": "bar-4",
+            "body": {
+                "width": "39",
+                "x": "165",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "61"
+            }
+        },
+        "s-key": {
+            "face": {
+                "width": "28",
+                "x": "119",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "145"
+            },
+            "name": "s-key",
+            "body": {
+                "width": "39",
+                "x": "114",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "143"
+            }
+        },
+        "r-key": {
+            "face": {
+                "width": "28",
+                "x": "191",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "104"
+            },
+            "name": "r-key",
+            "body": {
+                "width": "39",
+                "x": "186",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "102"
+            }
+        },
+        "bar-8": {
+            "face": {
+                "width": "28",
+                "x": "334",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "63"
+            },
+            "name": "bar-8",
+            "body": {
+                "width": "39",
+                "x": "329",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "61"
+            }
+        },
+        "os-key": {
+            "face": {
+                "width": "38",
+                "x": "58",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "227"
+            },
+            "name": "os-key",
+            "body": {
+                "width": "49",
+                "x": "52",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "225"
+            }
+        },
+        "bar-9": {
+            "face": {
+                "width": "28",
+                "x": "375",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "63"
+            },
+            "name": "bar-9",
+            "body": {
+                "width": "39",
+                "x": "370",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "61"
+            }
+        },
+        "home": {
+            "face": {
+                "width": "28",
+                "x": "674",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "63"
+            },
+            "name": "home",
+            "body": {
+                "width": "39",
+                "x": "669",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "61"
+            }
+        },
+        "p-key": {
+            "face": {
+                "width": "28",
+                "x": "437",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "104"
+            },
+            "name": "p-key",
+            "body": {
+                "width": "39",
+                "x": "432",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "102"
+            }
+        },
+        "spacebar": {
+            "face": {
+                "width": "244",
+                "x": "160",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "227"
+            },
+            "name": "spacebar",
+            "body": {
+                "width": "257",
+                "x": "154",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "225"
+            }
+        },
+        "insert": {
+            "face": {
+                "width": "28",
+                "x": "633",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "63"
+            },
+            "name": "insert",
+            "body": {
+                "width": "39",
+                "x": "628",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "61"
+            }
+        },
+        "comma": {
+            "face": {
+                "width": "28",
+                "x": "386",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "186"
+            },
+            "name": "comma",
+            "body": {
+                "width": "39",
+                "x": "381",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "184"
+            }
+        },
+        "scroll-lock": {
+            "face": {
+                "width": "28",
+                "x": "674",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "4"
+            },
+            "name": "scroll-lock",
+            "body": {
+                "width": "39",
+                "x": "669",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "2"
+            }
+        },
+        "bar-2": {
+            "face": {
+                "width": "28",
+                "x": "88",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "63"
+            },
+            "name": "bar-2",
+            "body": {
+                "width": "39",
+                "x": "83",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "61"
+            }
+        },
+        "forward-slash": {
+            "face": {
+                "width": "28",
+                "x": "468",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "186"
+            },
+            "name": "forward-slash",
+            "body": {
+                "width": "39",
+                "x": "463",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "184"
+            }
+        },
+        "left": {
+            "face": {
+                "width": "28",
+                "x": "633",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "227"
+            },
+            "name": "left",
+            "body": {
+                "width": "39",
+                "x": "628",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "225"
+            }
+        },
+        "tilde": {
+            "face": {
+                "width": "28",
+                "x": "6",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "63"
+            },
+            "name": "tilde",
+            "body": {
+                "width": "39",
+                "x": "1",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "61"
+            }
+        },
+        "f-key": {
+            "face": {
+                "width": "28",
+                "x": "201",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "145"
+            },
+            "name": "f-key",
+            "body": {
+                "width": "39",
+                "x": "196",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "143"
+            }
+        },
+        "underscore": {
+            "face": {
+                "width": "28",
+                "x": "457",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "63"
+            },
+            "name": "underscore",
+            "body": {
+                "width": "39",
+                "x": "452",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "61"
+            }
+        },
+        "f8": {
+            "face": {
+                "width": "28",
+                "x": "396",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "4"
+            },
+            "name": "f8",
+            "body": {
+                "width": "39",
+                "x": "391",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "2"
+            }
+        },
+        "equals": {
+            "face": {
+                "width": "28",
+                "x": "498",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "63"
+            },
+            "name": "equals",
+            "body": {
+                "width": "39",
+                "x": "493",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "61"
+            }
+        },
+        "bar-0": {
+            "face": {
+                "width": "28",
+                "x": "416",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "63"
+            },
+            "name": "bar-0",
+            "body": {
+                "width": "39",
+                "x": "411",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "61"
+            }
+        },
+        "right": {
+            "face": {
+                "width": "28",
+                "x": "715",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "227"
+            },
+            "name": "right",
+            "body": {
+                "width": "39",
+                "x": "710",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "225"
+            }
+        },
+        "tab": {
+            "face": {
+                "width": "48",
+                "x": "7",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "104"
+            },
+            "name": "tab",
+            "body": {
+                "width": "60",
+                "x": "1",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "102"
+            }
+        },
+        "period": {
+            "face": {
+                "width": "28",
+                "x": "427",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "186"
+            },
+            "name": "period",
+            "body": {
+                "width": "39",
+                "x": "422",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "184"
+            }
+        },
+        "k-key": {
+            "face": {
+                "width": "28",
+                "x": "365",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "145"
+            },
+            "name": "k-key",
+            "body": {
+                "width": "39",
+                "x": "360",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "143"
+            }
+        },
+        "pause": {
+            "face": {
+                "width": "28",
+                "x": "715",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "4"
+            },
+            "name": "pause",
+            "body": {
+                "width": "39",
+                "x": "710",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "2"
+            }
+        },
+        "page-up": {
+            "face": {
+                "width": "28",
+                "x": "715",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "63"
+            },
+            "name": "page-up",
+            "body": {
+                "width": "39",
+                "x": "710",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "61"
+            }
+        },
+        "f1": {
+            "face": {
+                "width": "28",
+                "x": "88",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "4"
+            },
+            "name": "f1",
+            "body": {
+                "width": "39",
+                "x": "83",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "2"
+            }
+        },
+        "m-key": {
+            "face": {
+                "width": "28",
+                "x": "345",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "186"
+            },
+            "name": "m-key",
+            "body": {
+                "width": "39",
+                "x": "340",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "184"
+            }
+        },
+        "right-ctrl": {
+            "face": {
+                "width": "38",
+                "x": "572",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "227"
+            },
+            "name": "right-ctrl",
+            "body": {
+                "width": "49",
+                "x": "566",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "225"
+            }
+        },
+        "w-key": {
+            "face": {
+                "width": "28",
+                "x": "109",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "104"
+            },
+            "name": "w-key",
+            "body": {
+                "width": "39",
+                "x": "104",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "102"
+            }
+        },
+        "j-key": {
+            "face": {
+                "width": "28",
+                "x": "324",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "145"
+            },
+            "name": "j-key",
+            "body": {
+                "width": "39",
+                "x": "319",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "143"
+            }
+        },
+        "l-key": {
+            "face": {
+                "width": "28",
+                "x": "406",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "145"
+            },
+            "name": "l-key",
+            "body": {
+                "width": "39",
+                "x": "401",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "143"
+            }
+        },
+        "bar-1": {
+            "face": {
+                "width": "28",
+                "x": "47",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "63"
+            },
+            "name": "bar-1",
+            "body": {
+                "width": "39",
+                "x": "42",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "61"
+            }
+        },
+        "d-key": {
+            "face": {
+                "width": "28",
+                "x": "160",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "145"
+            },
+            "name": "d-key",
+            "body": {
+                "width": "39",
+                "x": "155",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "143"
+            }
+        },
+        "right-bracket": {
+            "face": {
+                "width": "28",
+                "x": "519",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "104"
+            },
+            "name": "right-bracket",
+            "body": {
+                "width": "39",
+                "x": "514",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "102"
+            }
+        },
+        "n-key": {
+            "face": {
+                "width": "28",
+                "x": "304",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "186"
+            },
+            "name": "n-key",
+            "body": {
+                "width": "39",
+                "x": "299",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "184"
+            }
+        },
+        "u-key": {
+            "face": {
+                "width": "28",
+                "x": "314",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "104"
+            },
+            "name": "u-key",
+            "body": {
+                "width": "39",
+                "x": "309",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "102"
+            }
+        },
+        "q-key": {
+            "face": {
+                "width": "28",
+                "x": "68",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "104"
+            },
+            "name": "q-key",
+            "body": {
+                "width": "39",
+                "x": "63",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "102"
+            }
+        },
+        "a-key": {
+            "face": {
+                "width": "28",
+                "x": "78",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "145"
+            },
+            "name": "a-key",
+            "body": {
+                "width": "39",
+                "x": "73",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "143"
+            }
+        },
+        "left-bracket": {
+            "face": {
+                "width": "28",
+                "x": "478",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "104"
+            },
+            "name": "left-bracket",
+            "body": {
+                "width": "39",
+                "x": "473",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "102"
+            }
+        },
+        "h-key": {
+            "face": {
+                "width": "28",
+                "x": "283",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "145"
+            },
+            "name": "h-key",
+            "body": {
+                "width": "39",
+                "x": "278",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "143"
+            }
+        },
+        "f9": {
+            "face": {
+                "width": "28",
+                "x": "457",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "4"
+            },
+            "name": "f9",
+            "body": {
+                "width": "39",
+                "x": "452",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "2"
+            }
+        },
+        "t-key": {
+            "face": {
+                "width": "28",
+                "x": "232",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "104"
+            },
+            "name": "t-key",
+            "body": {
+                "width": "39",
+                "x": "227",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "102"
+            }
+        },
+        "right-alt": {
+            "face": {
+                "width": "38",
+                "x": "419",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "227"
+            },
+            "name": "right-alt",
+            "body": {
+                "width": "49",
+                "x": "413",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "225"
+            }
+        },
+        "f5": {
+            "face": {
+                "width": "28",
+                "x": "273",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "4"
+            },
+            "name": "f5",
+            "body": {
+                "width": "39",
+                "x": "268",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "2"
+            }
+        },
+        "f6": {
+            "face": {
+                "width": "28",
+                "x": "314",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "4"
+            },
+            "name": "f6",
+            "body": {
+                "width": "39",
+                "x": "309",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "2"
+            }
+        },
+        "g-key": {
+            "face": {
+                "width": "28",
+                "x": "242",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "145"
+            },
+            "name": "g-key",
+            "body": {
+                "width": "39",
+                "x": "237",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "143"
+            }
+        },
+        "bar-3": {
+            "face": {
+                "width": "28",
+                "x": "129",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "63"
+            },
+            "name": "bar-3",
+            "body": {
+                "width": "39",
+                "x": "124",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "61"
+            }
+        },
+        "f4": {
+            "face": {
+                "width": "28",
+                "x": "211",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "4"
+            },
+            "name": "f4",
+            "body": {
+                "width": "39",
+                "x": "206",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "2"
+            }
+        },
+        "e-key": {
+            "face": {
+                "width": "28",
+                "x": "150",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "104"
+            },
+            "name": "e-key",
+            "body": {
+                "width": "39",
+                "x": "145",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "102"
+            }
+        },
+        "other": {
+            "face": {
+                "width": "38",
+                "x": "470",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "227"
+            },
+            "name": "other",
+            "body": {
+                "width": "49",
+                "x": "464",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "225"
+            }
+        },
+        "enter": {
+            "face": {
+                "width": "79",
+                "x": "530",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "145"
+            },
+            "name": "enter",
+            "body": {
+                "width": "91",
+                "x": "524",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "143"
+            }
+        },
+        "backspace": {
+            "face": {
+                "width": "69",
+                "x": "540",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "63"
+            },
+            "name": "backspace",
+            "body": {
+                "width": "81",
+                "x": "534",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "61"
+            }
+        },
+        "quotes": {
+            "face": {
+                "width": "28",
+                "x": "488",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "145"
+            },
+            "name": "quotes",
+            "body": {
+                "width": "39",
+                "x": "483",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "143"
+            }
+        },
+        "delete": {
+            "face": {
+                "width": "28",
+                "x": "633",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "104"
+            },
+            "name": "delete",
+            "body": {
+                "width": "39",
+                "x": "628",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "102"
+            }
+        },
+        "esc": {
+            "face": {
+                "width": "28",
+                "x": "6",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "4"
+            },
+            "name": "esc",
+            "body": {
+                "width": "39",
+                "x": "1",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "2"
+            }
+        },
+        "page-down": {
+            "face": {
+                "width": "28",
+                "x": "715",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "104"
+            },
+            "name": "page-down",
+            "body": {
+                "width": "39",
+                "x": "710",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "102"
+            }
+        },
+        "backslash": {
+            "face": {
+                "width": "48",
+                "x": "561",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "104"
+            },
+            "name": "backslash",
+            "body": {
+                "width": "60",
+                "x": "555",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "102"
+            }
+        },
+        "left-shift": {
+            "face": {
+                "width": "79",
+                "x": "7",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "186"
+            },
+            "name": "left-shift",
+            "body": {
+                "width": "91",
+                "x": "1",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "184"
+            }
+        },
+        "menu-key": {
+            "face": {
+                "width": "38",
+                "x": "521",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "227"
+            },
+            "name": "menu-key",
+            "body": {
+                "width": "49",
+                "x": "515",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "225"
+            }
+        },
+        "x-key": {
+            "face": {
+                "width": "28",
+                "x": "140",
+                "color": "#1a1a1a",
+                "stroke": "#272727",
+                "height": "31",
+                "ry": 4,
+                "rx": 4,
+                "y": "186"
+            },
+            "name": "x-key",
+            "body": {
+                "width": "39",
+                "x": "135",
+                "color": "#0f0f0f",
+                "height": "39",
+                "ry": 2,
+                "rx": 2,
+                "y": "184"
+            }
+        }
+    }
+}

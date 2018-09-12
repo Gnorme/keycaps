@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="https://unpkg.com/vue"></script>
+		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<div id="navbar">
+			<div id="navbar-container">
+				<div id="logo">L O G O</div>
+				<div id="link-container">
+					<ul id="navbar-links">
+						<li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+						<li class="nav-item"><a class="nav-link">Products</a></li>
+						<li class="nav-item"><a class="nav-link">Gallery</a></li>
+						<li class="nav-item"><a class="nav-link">Support</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="customKey" class="grid-container">
+			<div class="product">	
+				<div id="keyViewer" :style="mainStyle">
+					<select class="select" id="chooseView" v-on:change="changeView">
+						<option v-for='option in viewOptions' :value="option.value">
+							{{ option.name }}
+						</option>
+					</select>		
+					<viewer :img='surfaces[currentView].img.value' :text='surfaces[currentView].text.value' :current-view='currentView' :transform-text='transformText' :transform-img='transformImg' :foreground-fill='selectedColor.color' :background-fill='shadeBlend(-0.2,selectedColor.color)' 
+					:stroke-color='shadeBlend(0.065,selectedColor.color)' :selected-key='selectedKey'></viewer>
+					<color-picker :set-color='setColor' :colors='colors'></color-picker>	
+					<upload-btn :on-change='previewImg' :filename='surfaces[currentView].img.filename'></upload-btn>
+					<div id="customText">
+						<input type="text" id="customTextInput" oninput="customKey.updateText(this.value)" placeholder="Choose text..." />
+					</div>	
+				</div>
+			</div>
+			<div class="options">
+				<h1 style="margin-top:0">Custom Keycap</h1>
+				<key-picker :keys='keys'></key-picker>
+				<div v-if="active">
+					<h2 style="margin:0;display:inline-block;" >$10.00</h2> 
+					<button style="margin-left: 20px" v-on:click="addToCart">Add to cart</button>
+				</div>			
+			</div>
+
+			<div class="info" >
+				<h2>Product Info</h2>
+				<div>
+					Keycap Material: Dye-sublimation ABS<br><br>
+
+					Compatibility: Fits most Cherry MX keyboards. See our Keycap Compatibility Guide for more information.<br><br>
+
+					Instructions
+					<ul style="list-style: none">
+						<li class="info-item">Select the desired key (make sure to chose the correct row)</li>
+						<li class="info-item">Select the color you want</li>
+						<li class="info-item">Choose an image from your PC that you'd like printed on the keycap</li>
+						<li class="info-item">Resize and/or position the image as you see fit</li>
+						<li class="info-item">Optional: Add and position text</li>
+						<li class="info-item">Optional: Select a different key-face (front,side, back) and add an image and/or text</li>
+						<li class="info-item">Add to cart - <span style="font-style:italic">you can add multiple copies in your cart before you checkout</span></li>
+					</ul>				
+				</div>
+			</div>
+		</div>
+
+	</body>
+	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="js/interact.min.js"></script>	
+	<script type="text/javascript" src="js/keyViewer.js"></script>
+</html>

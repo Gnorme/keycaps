@@ -1,9 +1,9 @@
 Vue.component('color-picker',{
 	props:['colors', 'setColor', 'selectedStyle','defaultStyle'],
 	template:`
-		<div id="colorPicker">
-			<div v-for='color in colors'>
-				<div class="colorChoice" :id="color.name" v-bind:style="{'background-color':color.color}" v-on:click="setColor(color)"></div>
+		<div class="colorPicker" id="keyColorPicker">
+			<div id="color-container">
+				<div v-for='color in colors' class="colorChoice keyPicker" :data-color="color.name" v-bind:style="{'background-color':color.color}" v-on:click="setColor(color)"></div>
 			</div>
 		</div>
 	`
@@ -13,33 +13,49 @@ Vue.component('upload-btn',{
 	template: `
 		<div id="fileSelect">
 			<input type="file" name="imgUpload" id="imgUpload" class="inputfile" v-on:change="onChange" accept=".jpg, .jpeg, .png"/>
-			<label for="imgUpload"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> <span v-if="filename.length > 0">{{ filename }}</span><span v-else>Choose image&hellip;</span></label>
+			<label for="imgUpload"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> <span v-if="filename.length > 0" style="font-family:Lato">{{ filename }}</span><span v-else>Choose image&hellip;</span></label>
 		</div>	
 	`
 })
 Vue.component('viewer', {
-	props:['img','text','currentView', 'transformText','transformImg','foregroundFill','backgroundFill'],
+	props:['img','text','currentView', 'transformText','transformImg','foregroundFill','backgroundFill', 'strokeColor', 'selectedKey'],
 	template: `
 		<div class="surface">
 			<div class="moveableText" :style="transformText"> {{ text }} </div>
-			<img :src="img" class="moveableImg" :style="transformImg"/>				
-			<template v-if="currentView === 'topView'">
-				<svg width="200" height="210">
-					<rect stroke="#000" rx="20" id="bottom" height="197.5" width="181.99999" y="7.25" x="9.25" stroke-opacity="null" stroke-width="1.5" :fill="backgroundFill"/>
-					<rect id="top" rx="20" height="150" width="150" y="15.5" x="19" stroke-width="1.5" stroke="#000" :fill="foregroundFill" class="restrictRect"/>
-				</svg>						
-			</template>
-			<template v-else>				
-				<svg width="215" height="220">
-					<path stroke-width="1.5" stroke="#000" :fill="foregroundFill" d="M52.946,119.000 L148.054,119.000 C155.667,119.000 161.838,125.147 161.838,132.729 L177.000,186.271 C177.000,193.853 170.829,200.000 163.216,200.000 L37.784,200.000 C30.171,200.000 24.000,193.853 24.000,186.271 L39.162,132.729 C39.162,125.147 45.333,119.000 52.946,119.000 Z" class="keySurface"/>
-      				<rect class="restrictRect" stroke-opacity="0" fill-opacity="0" x="45" y="120" width="110" height="80" />												
+			<img v-if="img == ''" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" width='0' height='0' class="moveableImg"/>
+			<img v-else :src="img" class="moveableImg" :style="transformImg"/>
+			<template v-if="currentView === 'topView'">				
+				<svg width="260" height="210" preserveAspectRatio="xMidYMid meet" :viewBox="selectedKey.sides.topView.viewbox">
+					<rect class="keySurface" :x="selectedKey.sides.topView.body.x" :y="selectedKey.sides.topView.body.y" :width="selectedKey.sides.topView.body.width" :height="selectedKey.sides.topView.body.height" :rx="selectedKey.sides.topView.body.rx" :ry="selectedKey.sides.topView.body.ry" :fill="backgroundFill"/>
+					<rect class="restrictRect" :x="selectedKey.sides.topView.face.x" :y="selectedKey.sides.topView.face.y" :width="selectedKey.sides.topView.face.width" :height="selectedKey.sides.topView.face.height" :rx="selectedKey.sides.topView.face.rx" :ry="selectedKey.sides.topView.face.ry" :fill="foregroundFill" :stroke="strokeColor" stroke-width="4px" vector-effect="non-scaling-stroke"/>				
 				</svg>
+			</template>					
+			<template v-else>	
+				<svg width="260" height="210" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" :viewBox="selectedKey.sides.topView.viewbox">
+					<path stroke-width="1" :stroke="backgroundFill" :fill="foregroundFill" class="keySurface" :d="selectedKey.sides[currentView].path" vector-effect="non-scaling-stroke"/>
+					<rect class="restrictRect" fill-opacity="0" :height="selectedKey.sides[currentView].restrict.height" stroke-opacity="0" :width="selectedKey.sides[currentView].restrict.width" :x="selectedKey.sides[currentView].restrict.x" :y="selectedKey.sides[currentView].restrict.y"/>
+				</svg>						
 			</template>	
 		</div>	
 	`	
 })
-var keyViewer = new Vue({
-	el:'#keyViewer',
+
+Vue.component('key-picker',{
+	props: ['keys'],
+	template:`
+		<div>
+			Select a key  -  <span style="font-style:italic;text-decoration:underline">Why the row matters</span><br>
+			<svg style="background-color:black; margin-top:5px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="616" height="205" viewBox="0 0 616 205">
+				<g v-for="key in keys">
+					<rect :x="key.body.x" :y="key.body.y" :width="key.body.width" :height="key.body.height" rx="2" ry="2" :style="{fill:key.body.color}" :name="key.name" class="key-body"/>
+					<rect :x="key.face.x" :y="key.face.y" :width="key.face.width" :height="key.face.height" rx="4" ry="4" :style="{fill:key.face.color,stroke:key.face.stroke}" :name="key.name" class="key-face"/>
+				</g>
+			</svg>
+		</div>
+	`
+})
+var customKey = new Vue({
+	el:'#customKey',
 	data: {
 		currentView:'topView',
 		selectedColor: {name:'white',color:'#ffffff'},
@@ -74,18 +90,35 @@ var keyViewer = new Vue({
 			{name:'Back',value:'backView'}				
 		],
 		surfaces: {
-			topView:{img:{x:'20',y:'16',value:'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=', filename:''},text:{x:'25',y:'15',value:'top'}},
-			frontView:{img:{x:'50',y:'120',value:'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=', filename:''},text:{x:'50',y:'120',value:'front'}},
-			leftView:{img:{x:'50',y:'120',value:'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=', filename:''},text:{x:'50',y:'120',value:'left'}},
-			rightView:{img:{x:'50',y:'120',value:'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=', filename:''},text:{x:'50',y:'120',value:'right'}},
-			backView:{img:{x:'50',y:'120',value:'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=', filename:''},text:{x:'50',y:'120',value:'back'}}					
+			topView:{img:{x:'20',y:'16',value:'', filename:''},text:{x:'25',y:'15',value:''}},
+			frontView:{img:{x:'50',y:'120',value:'', filename:''},text:{x:'50',y:'120',value:''}},
+			leftView:{img:{x:'50',y:'120',value:'', filename:''},text:{x:'50',y:'120',value:''}},
+			rightView:{img:{x:'50',y:'120',value:'', filename:''},text:{x:'50',y:'120',value:''}},
+			backView:{img:{x:'50',y:'120',value:'', filename:''},text:{x:'50',y:'120',value:''}}					
+		},
+		keys:{},
+		selectedKey:{
+			type:"square",
+			sides:{
+				topView:{body:{x:0,y:0,width:39,height:39,rx:2,ry:2},face:{x:5.5,y:3,width:28,height:31,rx:4,ry:4},viewbox:"0 0 39 39"},			
+				frontView:{path:"m61.946,119l95.108,0c6.613,0 14.784,5.147 16.784,13.729l12.162,53.542c2,8.582 -3.171,13.729 -13.784,13.729l-125.432,0c-8.613,0 -16.784,-4.147 -13.784,-13.729l12.162,-51.542c2,-8.582 9.171,-15.729 16.784,-15.729z", restrict:{height:80,width:110,x:51,y:60}},
+				leftView:{path:"m61.946,119l95.108,0c6.613,0 14.784,5.147 16.784,13.729l12.162,53.542c2,8.582 -3.171,13.729 -13.784,13.729l-125.432,0c-8.613,0 -16.784,-4.147 -13.784,-13.729l12.162,-51.542c2,-8.582 9.171,-15.729 16.784,-15.729z", restrict:{height:80,width:110,x:51,y:60}},
+				rightView:{path:"m61.946,119l95.108,0c6.613,0 14.784,5.147 16.784,13.729l12.162,53.542c2,8.582 -3.171,13.729 -13.784,13.729l-125.432,0c-8.613,0 -16.784,-4.147 -13.784,-13.729l12.162,-51.542c2,-8.582 9.171,-15.729 16.784,-15.729z", restrict:{height:80,width:110,x:51,y:60}},
+				backView:{path:"m61.946,119l95.108,0c6.613,0 14.784,5.147 16.784,13.729l12.162,53.542c2,8.582 -3.171,13.729 -13.784,13.729l-125.432,0c-8.613,0 -16.784,-4.147 -13.784,-13.729l12.162,-51.542c2,-8.582 9.171,-15.729 16.784,-15.729z", restrict:{height:80,width:110,x:51,y:60}}				
+			}
+		},
+		sides:{},
+		active:false,
+		mainStyle:{
+			pointerEvents:'none',
+			opacity:0.3
 		}
 	},
 	computed: {
 		transformText () {
 			x = this.surfaces[this.currentView].text.x
 			y = this.surfaces[this.currentView].text.y
-			return {transform: 'translate(' + x + 'px,' + y + 'px)'}
+			return {transform: 'translate(' + x + 'px,' + y + 'px)',fontSize:'26px'}
 		},
 		transformImg () {
 			x = this.surfaces[this.currentView].img.x
@@ -93,30 +126,40 @@ var keyViewer = new Vue({
 			return {transform: 'translate(' + x + 'px,' + y + 'px)'}				
 		}
 	},
-	updated: function () {
-		this.$nextTick(function () {
-			surface = document.querySelector('.restrictRect').getBoundingClientRect()
-			interact('.moveableText').options.drag.restrict.restriction = {
-				x:surface.x,
-				y:surface.y,
-				width:surface.width,
-				height:surface.height					
+    mounted: function () {
+	    var self = this;
+		$.ajax({
+			url: 'http://localhost:3000/keyboard',	//read comments in search.php for more information usage
+			type: 'GET',
+			data: {board: 'keyboard-61', sides:true},
+			dataType: 'json',
+			success: function(json) {
+				self.keys = json.keys;
+				self.sides = json.sides;
 			}
-			interact('.moveableImg').options.drag.restrict.restriction = {
-				x:surface.x,
-				y:surface.y,
-				width:surface.width,
-				height:surface.height					
-			}				
-		})
-	},
+		});			
+    },	
 	methods: {
+		addToCart: function() {
+			var key = {name:this.selectedKey.name,color:this.selectedColor.name,surfaces:this.surfaces}
+			$.ajax({
+			    type: "POST",
+			    url: "http://localhost:3000/customKeyboard",
+			    processData: false,
+			    contentType: 'application/json',			    
+			    data: JSON.stringify(this.keyboard.keys),
+			    success: function(res) {
+					console.log(res)
+			    }
+			});	
+		},
 		setColor: function(color) {
-			document.querySelector('#'+this.selectedColor.name).style.border = '1px solid #d4d4d4'
-			document.querySelector('#'+color.name).style.border = '2px solid red'
+			document.querySelector('.keyPicker[data-color="'+this.selectedColor.name+'"]').style.removeProperty('border')
+			document.querySelector('.keyPicker[data-color="'+color.name+'"]').style.border = '2px solid red'
 			this.selectedColor = color
 		},			
 		changeView: function(ev) {
+			document.activeElement.blur();
 			this.currentView = ev.target.selectedOptions[0].value
 			var fileInput = document.querySelector('input[type=file]')
 			var textInput = document.querySelector('input[type=text]')
@@ -128,6 +171,60 @@ var keyViewer = new Vue({
 				}
 			}
 			textInput.value = this.surfaces[this.currentView].text.value
+			this.updateSnapPoints()
+		},
+		updateSnapPoints: function () {
+			Vue.nextTick(function () {
+				surface = document.querySelector('.restrictRect').getBoundingClientRect()
+				var imgWidth = document.querySelector('.moveableImg').width
+				var textWidth = document.querySelector('.moveableText').style.width
+				var textHeight = document.querySelector('.moveableText').style.height
+
+				interact('.moveableText').options.drag.snap.targets = calcSnapTargets(surface,textWidth,textHeight)
+				interact('.moveableText').options.drag.restrict.restriction = {
+					x:surface.x,
+					y:surface.y,
+					width:surface.width,
+					height:surface.height					
+				}
+
+				interact('.moveableImg').options.drag.snap.targets = calcSnapTargets(surface,imgWidth,imgWidth)
+				interact('.moveableImg').options.drag.restrict.restriction = {
+					x:surface.x,
+					y:surface.y,
+					width:surface.width,
+					height:surface.height					
+				}
+			})
+		},
+		changeKey: function(name) {
+				var prevKey = this.selectedKey.name
+				var color = '#ffffff'
+				var keyType = JSON.parse(JSON.stringify(this.keys[name].type))
+				if (!this.active) {
+					this.active = true
+					this.mainStyle.pointerEvents = 'auto'
+					this.mainStyle.opacity = 1
+					Vue.nextTick(function () {
+						addInteractive()
+					})
+				}
+				if (prevKey){
+					this.keys[prevKey].body.color = '#0f0f0f'
+					this.keys[prevKey].face.stroke = '#272727'	
+					this.keys[prevKey].face.color = '#1a1a1a'						
+				}
+
+				this.selectedKey.sides = this.sides[keyType]
+				this.selectedKey.type = keyType
+				this.selectedKey.name = name
+
+				this.keys[name].body.color = this.shadeBlend(-0.25, color)
+				this.keys[name].face.stroke = this.shadeBlend(0.065, color)	
+				this.keys[name].face.color = color
+
+				//this.selectedKey.topView.viewbox = "0 0 " + this.selectedKey.topView.body.width + " " + this.selectedKey.topView.body.height
+				this.updateSnapPoints()
 		},
 		updateText: function(text) {
 			this.surfaces[this.currentView].text.value = text
@@ -151,7 +248,9 @@ var keyViewer = new Vue({
 			var label = document.querySelector( '.inputfile' ).nextElementSibling
 			var target = this.surfaces[this.currentView].img
 			var reader  = new FileReader();
-			console.log(document.querySelector('input[type=file]').value)
+			var surface = document.querySelector('.restrictRect').getBoundingClientRect()
+			var width = document.querySelector('.moveableImg').width
+
 			reader.onloadend = function () {
 				 target.value = reader.result
 			}
@@ -159,7 +258,7 @@ var keyViewer = new Vue({
 			if (file) {
 				target.filename = file.name
 				reader.readAsDataURL(file); //reads the data as a URL
-
+				interact('.moveableImg').options.drag.snap.targets = calcSnapTargets(surface,width,width)
 			} else {
 				target.value = "";
 			}				
@@ -192,9 +291,9 @@ function dragMoveListener (event) {
 	var target = event.target
 
 	if (target.nodeName == "DIV"){
-		var node = keyViewer.surfaces[keyViewer.currentView].text
+		var node = customKey.surfaces[customKey.currentView].text
 	} else if (target.nodeName == "IMG") {
-		var node = keyViewer.surfaces[keyViewer.currentView].img
+		var node = customKey.surfaces[customKey.currentView].img
 	}
 
 	node.x = (parseFloat(node.x) || 0) + event.dx,
@@ -204,79 +303,90 @@ function dragMoveListener (event) {
 // this is used later in the resizing and gesture demos
 window.dragMoveListener = dragMoveListener;	
 
-var surface = document.querySelector('.restrictRect').getBoundingClientRect()
-
-interact('.moveableText')
-	.draggable({
-		onmove: window.dragMoveListener,
-		snap: {
-			targets: [{}],
-			range:20,
-		    relativePoints: [
-		      //{ x: 0  , y: 0   }  // snap relative to the element's top-left,
-		      { x: 0.5, y: 0.5 }   // to the center
-		      // { x: 1  , y: 1   }    // and to the bottom-right
-		    ]			
-		},
-		restrict: {
-			restriction: {
-				x:surface.x,
-				y:surface.y,
-				width:surface.width,
-				height:surface.height
+function addInteractive() {
+	var surface = document.querySelector('.restrictRect').getBoundingClientRect()
+	interact('.moveableText')
+		.draggable({
+			onmove: window.dragMoveListener,
+			snap: {
+				targets: [{}],
+				range:20,
+			    relativePoints: [
+			      //{ x: 0  , y: 0   }  // snap relative to the element's top-left,
+			      { x: 0.5, y: 0.5 }   // to the center
+			      // { x: 1  , y: 1   }    // and to the bottom-right
+			    ]			
 			},
-			elementRect: { top: 0, left: 0, bottom: 1, right: 1 }
-		},
-	})	
-interact('.moveableImg')
-	.draggable({
-		onmove: window.dragMoveListener,
-		snap: {
-			targets: [{}],
-			range:30,
-		    relativePoints: [
-		      //{ x: 0  , y: 0   }  // snap relative to the element's top-left,
-		      { x: 0.5, y: 0.5 }   // to the center
-		      // { x: 1  , y: 1   }    // and to the bottom-right
-		    ]			
-		},
-		restrict: {
-			restriction: {
-				x:surface.left,
-				y:surface.top,
-				width:surface.width,
-				height:surface.height
-			},
-			elementRect: { top: 0, left: 0, bottom: 1, right: 1 }
-		},
-	})
-	.resizable({
-		// resize from all edges and corners
-		edges: {right: true, bottom: true, left: true, top:true},
-
-		// keep the edges inside the parent
-		restrictEdges: {
-			outer:{
+			restrict: {
+				restriction: {
 					x:surface.x,
 					y:surface.y,
 					width:surface.width,
 					height:surface.height
 				},
-		},
+				elementRect: { top: 0, left: 0, bottom: 1, right: 1 }
+			},
+		})	
+	interact('.moveableImg')
+		.draggable({
+			onmove: window.dragMoveListener,
+			snap: {
+				targets: [{}],
+				range:10,
+			    relativePoints: [
+			      //{ x: 0  , y: 0   }  // snap relative to the element's top-left,
+			      { x: 0.5, y: 0.5 }   // to the center
+			      // { x: 1  , y: 1   }    // and to the bottom-right
+			    ]			
+			},
+			restrict: {
+				restriction: {
+					x:surface.left,
+					y:surface.top,
+					width:surface.width,
+					height:surface.height
+				},
+				elementRect: { top: 0, left: 0, bottom: 1, right: 1 }
+			},
+		})
+		.resizable({
+			// resize from all edges and corners
+			edges: {right: true, bottom: true, left: true, top:true},
 
-		// minimum size
-		restrictSize: {
-		min: { width: 50, height: 50 },
-		},
+			// keep the edges inside the parent
+			restrictEdges: {
+				outer:{
+						x:surface.x,
+						y:surface.y,
+						width:surface.width,
+						height:surface.height
+					},
+			},
 
-		inertia: true,
-	})
-	.on('resizemove', function (event) {
-		var target = event.target
-		var newWidth = event.rect.width
-		var newHeight = event.rect.height
-		target.style.width = newWidth + 'px'
+			// minimum size
+			restrictSize: {
+			min: { width: 50, height: 50 },
+			},
 
-		interact('.moveableImg').options.drag.snap.targets = calcSnapTargets(surface, newWidth, newHeight)		
-		//placeImage()
-	});	
+			inertia: true,
+		})
+		.on('resizemove', function (event) {
+			var target = event.target
+			var newWidth = event.rect.width
+			var newHeight = event.rect.height
+			target.style.width = newWidth + 'px'
+
+			interact('.moveableImg').options.drag.snap.targets = calcSnapTargets(surface, newWidth, newHeight)		
+			//placeImage()
+		});	
+}
+
+document.body.addEventListener('click', function(e) {
+    var target = e.target;
+    if (target.className){
+		if (target.classList.contains('key-face')) {
+			customKey.changeKey(target.getAttribute('name'))
+		}   	
+    }
+    e.stopPropagation()
+});	

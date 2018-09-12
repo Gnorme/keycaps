@@ -1,0 +1,9 @@
+.key-body {
+	fill: #0f0f0f;
+}
+
+.key-face{
+	fill: #1a1a1a;
+	stroke-width: 1px;
+	stroke: #272727;
+}

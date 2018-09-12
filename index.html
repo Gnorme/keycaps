@@ -1,17 +1,75 @@
-<script src="https://unpkg.com/vue"></script>
-<script type="text/javascript" src="js/interact.min.js"></script>
-<link rel="stylesheet" href="css/style.css">
-<div id="keyViewer">
-	<select id="chooseView" v-on:change="changeView">
-		<option v-for='option in viewOptions' :value="option.value">
-			{{ option.name }}
-		</option>
-	</select>		
-	<viewer :img='surfaces[currentView].img.value' :text='surfaces[currentView].text.value' :current-view='currentView' :transform-text='transformText' :transform-img='transformImg' :foreground-fill='selectedColor.color' :background-fill='shadeBlend(-0.2,selectedColor.color)'></viewer>
-	<upload-btn :on-change='previewImg' :filename='surfaces[currentView].img.filename'></upload-btn>
-	<div id="customText">
-		<input type="text" oninput="keyViewer.updateText(this.value)" placeholder="Choose text..." />
-	</div>	
-	<color-picker :set-color='setColor' :colors='colors'></color-picker>	
-</div>
-<script type="text/javascript" src="js/keyViewer.js"></script>
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8"/>
+		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<div id="navbar">
+			<div id="navbar-container">
+				<div id="logo">L O G O</div>
+				<div id="link-container">
+					<ul id="navbar-links">
+						<li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+						<li class="nav-item">
+							<a class="nav-link">Products</a>
+							<ul class="dropdown">
+								<li class="dropdown-item"><a href="#">Single custom keycap</a></li>
+								<li class="dropdown-item"><a href="#">Custom keycap set</a></li>
+							</ul>
+						</li>
+						<li class="nav-item"><a class="nav-link">Gallery</a></li>
+						<li class="nav-item"><a class="nav-link">Support</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="hero">
+			<img src="fp2-1.jpg" />
+		</div>
+		<div class="info-section dark">
+			<div class="info-container">
+				<div class="demo" id="keycap-demo">
+					<video muted autoplay style="margin-right:30%">
+						<source src="demo.mp4" type="video/mp4">
+					</video>
+				</div>
+				<div class="info-details right">
+					<ul style="list-style: none">
+						<li class="info-item">Design your own custom keycaps</li>
+						<li class="info-item">Simplified and intuitive design process</li>
+						<li class="info-item">Add graphics and position them as you see fit</li>
+						<li class="info-item">Add key labels or custom text wherever you want</li>
+						<li class="info-item">Create truly unique designs and share them with others</li>
+					</ul>
+					<div style="padding:20px 15px;">
+						<button><a href="keycap.html">Design a keycap</a></button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="info-section">
+			<div class="info-container">
+				<div class="info-details left">
+					<ul style="list-style: none">
+						<li class="info-item">Design your own custom keycaps</li>
+						<li class="info-item">Simplified and intuitive design process</li>
+						<li class="info-item">Add graphics and position them as you see fit</li>
+						<li class="info-item">Add key labels or custom text wherever you want</li>
+						<li class="info-item">Create truly unique designs and share them with others</li>
+					</ul>
+					<div style="padding:20px 15px;">
+							<button><a href="keyboard.html">Design a keyboard</a></button>
+					</div>
+				</div>
+				<div class="demo" id="keyboard-demo">
+					<img src="keyboard-demo.png" />
+				</div>		
+			</div>
+		</div>
+	</body>
+</html>
+
