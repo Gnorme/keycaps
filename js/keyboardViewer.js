@@ -62,7 +62,7 @@ var keyboardViewer = new Vue({
 	methods: {
 		getKeyboard: function(name) {
 			var self = this;
-			fetch('https://us-central1-hotsguide-188315.cloudfunctions.net/function-1?board=keyboard-61&sides=true', {
+			fetch('https://us-central1-hotsguide-188315.cloudfunctions.net/function-1?board='+name, {
 				headers: {
 					"Content-Type": "application/json; charset=utf-8",
 				}
