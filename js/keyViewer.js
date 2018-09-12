@@ -135,7 +135,6 @@ var customKey = new Vue({
 	    })
 	    .then(response => response.json())
 	    .then(data => {
-	    	console.log(data)
 	    	self.keys = data.keys;
 	    	self.sides = data.sides
 	    })
