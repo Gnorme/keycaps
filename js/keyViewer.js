@@ -134,7 +134,8 @@ var customKey = new Vue({
 	    	}
 	    })
 	    .then(function(response){
-	    	console.log(response)
+	    	var test = response.json()
+	    	console.log(test)
 	    })
 	    .then(function(data) {
 	    	console.log(data)
