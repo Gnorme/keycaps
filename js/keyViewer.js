@@ -129,6 +129,7 @@ var customKey = new Vue({
     mounted: function () {
 	    var self = this;
 	    fetch('https://us-central1-hotsguide-188315.cloudfunctions.net/function-1', {
+	    	method:"POST",
 	    	mode:"cors",
 	    	headers: {
 	    		"Content-Type": "application/json; charset=utf-8",
