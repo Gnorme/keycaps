@@ -128,16 +128,25 @@ var customKey = new Vue({
 	},
     mounted: function () {
 	    var self = this;
-		$.ajax({
-			url: 'https://us-central1-hotsguide-188315.cloudfunctions.net/function-1',	//read comments in search.php for more information usage
-			type: 'GET',
-			data: {board: 'keyboard-61', sides:true},
-			dataType: 'json',
-			success: function(json) {
-				self.keys = json.keys;
-				self.sides = json.sides;
-			}
-		});			
+	    fetch('https://us-central1-hotsguide-188315.cloudfunctions.net/function-1', {
+	    	mode:"cors",
+	    	headers: {
+	    		"Content-Type": "application/json: charset=uts-8",
+	    	},
+	    	body:JSON.stringify({board:'keyboard-61', sides:true})
+	    })
+	    .then(response => response.json())
+	    .then(response => self.keys = json.keys);
+		// $.ajax({
+		// 	url: 'https://us-central1-hotsguide-188315.cloudfunctions.net/function-1',	//read comments in search.php for more information usage
+		// 	type: 'GET',
+		// 	data: {board: 'keyboard-61', sides:true},
+		// 	dataType: 'json',
+		// 	success: function(json) {
+		// 		self.keys = json.keys;
+		// 		self.sides = json.sides;
+		// 	}
+		// });			
     },	
 	methods: {
 		addToCart: function() {
