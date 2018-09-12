@@ -133,12 +133,11 @@ var customKey = new Vue({
 	    		"Content-Type": "application/json; charset=utf-8",
 	    	}
 	    })
-	    .then(function(response){
-	    	var test = response.json()
-	    	console.log(test)
-	    })
-	    .then(function(data) {
+	    .then(response => response.json())
+	    .then(data => {
 	    	console.log(data)
+	    	self.keys = data.key;
+	    	self.sides = data.sides
 	    })
 	    .catch(error => console.error(error));
 		// $.ajax({
