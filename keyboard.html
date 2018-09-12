@@ -31,10 +31,10 @@
 				<keyboard :keyboard='keyboard'></keyboard>
 				<keyboard-color-picker :select-color='selectColor' :colors='colors'></keyboard-color-picker>
 				<div id="keyboardActions">
-					<button v-on:click="undoChange">Undo</button>
-					<button v-on:click="redoChange">Redo</button>
-					<button v-on:click="setColorAll">Set All</button>
-					<button v-on:click="uploadKeyboard">Upload</button>
+					<div class="button" v-on:click="undoChange">Undo</div>
+					<div class="button" v-on:click="redoChange">Redo</div>
+					<div class="button" v-on:click="setColorAll">Set All</div>
+					<div class="button" v-on:click="uploadKeyboard">Upload</div>
 				</div>
 			</div>
 			<div class="info">

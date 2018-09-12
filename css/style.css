@@ -292,6 +292,7 @@ a {
 	-webkit-appearance: none; 
 	-moz-appearance: none;
 	background-position: right 10px center;
+	border:1px solid rgb(169,169,169);
 }/* Arrow */
 .select:hover {
 	border-color: darkslategray;
