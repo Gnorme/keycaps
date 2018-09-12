@@ -139,7 +139,8 @@ var customKey = new Vue({
 	    	var res = response.json()
 	    	self.keys = res.keys;
 	    	self.sides = res.sides
-	    });
+	    })
+	    .catch(error => console.error(error));
 		// $.ajax({
 		// 	url: 'https://us-central1-hotsguide-188315.cloudfunctions.net/function-1',	//read comments in search.php for more information usage
 		// 	type: 'GET',
