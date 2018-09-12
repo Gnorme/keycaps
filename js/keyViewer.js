@@ -137,9 +137,7 @@ var customKey = new Vue({
 	    	console.log(response)
 	    })
 	    .then(function(data) {
-	    	var res = data.json()
-	    	self.keys = res.keys;
-	    	self.sides = res.sides
+	    	console.log(data)
 	    })
 	    .catch(error => console.error(error));
 		// $.ajax({
