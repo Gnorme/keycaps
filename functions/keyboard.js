@@ -5,7 +5,7 @@ exports.handler = async (event, context) => {
 	const sides = event.queryStringParameters.sides || false;
 	var keyboard = {}
 	
-	fs.readFile('./../../'+boardType+'.json','utf-8', (err, jData) => {
+	fs.readFile(boardType+'.json','utf-8', (err, jData) => {
 		if (err) {
 			return {
 				statusCode:404,
