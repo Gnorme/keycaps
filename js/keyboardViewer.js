@@ -61,18 +61,18 @@ var keyboardViewer = new Vue({
     },
 	methods: {
 		getKeyboard: function(name) {
-		    var self = this;
-		    fetch('https://us-central1-hotsguide-188315.cloudfunctions.net/function-1?board=keyboard-61&sides=true', {
-		    	headers: {
-		    		"Content-Type": "application/json; charset=utf-8",
-		    	}
-		    })
-		    .then(response => response.json())
-		    .then(data => {
-		    	self.keys = data.keys;
-		    	self.sides = data.sides
-		    })
-		    .catch(error => console.error(error));
+			var self = this;
+			fetch('https://us-central1-hotsguide-188315.cloudfunctions.net/function-1?board=keyboard-61&sides=true', {
+				headers: {
+					"Content-Type": "application/json; charset=utf-8",
+				}
+			})
+			.then(response => response.json())
+			.then(data => {
+				self.keyboard = data;
+				self.states = [JSON.parse(JSON.stringify(self.keyboard.keys))]
+			})
+			.catch(error => console.error(error));
 		},
 		uploadKeyboard: function() {
 			$.ajax({
