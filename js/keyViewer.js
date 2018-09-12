@@ -129,7 +129,7 @@ var customKey = new Vue({
     mounted: function () {
 	    var self = this;
 		$.ajax({
-			url: '/.netlify/functions/keyboard',	//read comments in search.php for more information usage
+			url: 'https://us-central1-hotsguide-188315.cloudfunctions.net/function-1',	//read comments in search.php for more information usage
 			type: 'GET',
 			data: {board: 'keyboard-61', sides:true},
 			dataType: 'json',
