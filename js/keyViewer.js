@@ -128,7 +128,7 @@ var customKey = new Vue({
 	},
     mounted: function () {
 	    var self = this;
-	    fetch('https://us-central1-hotsguide-188315.cloudfunctions.net/function-1?board=keyboard61&sides=true', {
+	    fetch('https://us-central1-hotsguide-188315.cloudfunctions.net/function-1?board=keyboard-61&sides=true', {
 	    	mode:"cors",
 	    	headers: {
 	    		"Content-Type": "application/json; charset=utf-8",
