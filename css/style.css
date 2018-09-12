@@ -207,6 +207,7 @@ ul li ul li {
 	font-size:16px;
 	box-shadow: 1px 1px 5px rgba(0,0,0,0.3);
 	display:inline-block;
+	cursor: pointer;
 }
 a {
 	color:inherit;
@@ -218,7 +219,7 @@ a {
 	display:inline-block; 
 	height:1.3em; 
 	width:1.3em; 
-	background-image:url('bullet-key.svg'); 
+	background-image:url('../bullet-key.svg'); 
 	background-size:contain; 
 	background-repeat:no-repeat; 
 	padding-left: 2em; 
