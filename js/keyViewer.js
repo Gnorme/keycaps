@@ -131,7 +131,7 @@ var customKey = new Vue({
 	    fetch('https://us-central1-hotsguide-188315.cloudfunctions.net/function-1', {
 	    	mode:"cors",
 	    	headers: {
-	    		"Content-Type": "application/json: charset=uts-8",
+	    		"Content-Type": "application/json; charset=utf-8",
 	    	},
 	    	body:JSON.stringify({board:'keyboard-61', sides:true})
 	    })
