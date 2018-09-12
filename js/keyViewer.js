@@ -136,8 +136,9 @@ var customKey = new Vue({
 	    	body:JSON.stringify({board:'keyboard-61', sides:true})
 	    })
 	    .then(function(response){
-	    	self.keys = response.keys;
-	    	self.sides = response.sides
+	    	var res = response.json()
+	    	self.keys = res.keys;
+	    	self.sides = res.sides
 	    });
 		// $.ajax({
 		// 	url: 'https://us-central1-hotsguide-188315.cloudfunctions.net/function-1',	//read comments in search.php for more information usage
