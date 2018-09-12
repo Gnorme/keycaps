@@ -289,6 +289,7 @@ a {
 	background: url('../arrow-down.svg') no-repeat;
 	background-size:12px;
 	-webkit-appearance: none; 
+	-moz-appearance:
 	background-position: right 10px center;
 }/* Arrow */
 .select:hover {
